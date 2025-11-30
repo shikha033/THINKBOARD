@@ -1,8 +1,16 @@
+require("dotenv").config();
+
+
 //import express from "express";
 const express = require("express");
-
+// express app
 const app = express();
-
-app.listen(5001, () => {
-  console.log("Server is running on port 5001");
+// routes---
+app.get("/", (req, res) => {
+  res.json({ mssg: "Welcome to the app" });
+});
+// listen for requests
+app.listen(process.env.PORT, () => {
+  //console.log(`Server is running on port  ${process.env.PORT}`);
+  console.log('Server is running on port',process.env.PORT);
 });
